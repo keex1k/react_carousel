@@ -29,9 +29,10 @@ const Carousel: React.FC<Props> = ({
   const handlePrev = () => {
     if (canHandlePrev || infinity) {
       setPosition(prevPosition => {
-        if(prevPosition === 0){
-          return imagesLength -1;
+        if (prevPosition === 0) {
+          return imagesLength - 1;
         }
+
         return Math.max(prevPosition - step, 0);
       });
     }
