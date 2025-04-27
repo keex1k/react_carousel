@@ -11,7 +11,14 @@ type Props = {
   infinity: boolean;
 };
 
-const Carousel: React.FC<Props> = ({ images, frameSize, itemWidth, step, animationDuration, infinity }) => {
+const Carousel: React.FC<Props> = ({
+  images,
+  frameSize,
+  itemWidth,
+  step,
+  animationDuration,
+  infinity,
+}) => {
   const [position, setPosition] = useState(0);
 
   const imagesLength = images.length;
@@ -42,11 +49,11 @@ const Carousel: React.FC<Props> = ({ images, frameSize, itemWidth, step, animati
       <ul className="Carousel__list">
         {images.map(image => (
           <li
-          key = {image}
-          style={{
-            transform: `translateX(${-position * itemWidth}px)`,
-            transition: `transform ${animationDuration}ms`
-          }}
+            key={image}
+            style={{
+              transform: `translateX(${-position * itemWidth}px)`,
+              transition: `transform ${animationDuration}ms`,
+            }}
           >
             <img src={image} alt={image} width={itemWidth} />
           </li>

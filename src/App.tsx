@@ -58,7 +58,7 @@ class App extends React.Component<{}, State> {
               type="number"
               value={this.state.frameSize}
               onChange={e =>
-                this.setState({ frameSize: Math.max(+e.target.value, 0)})
+                this.setState({ frameSize: Math.max(+e.target.value, 0) })
               }
             />
           </div>
@@ -69,7 +69,7 @@ class App extends React.Component<{}, State> {
               type="number"
               value={this.state.step}
               onChange={e =>
-                this.setState({ step: Math.max(+e.target.value, 0)})
+                this.setState({ step: Math.max(+e.target.value, 0) })
               }
             />
           </div>
@@ -80,7 +80,9 @@ class App extends React.Component<{}, State> {
               type="number"
               value={this.state.animationDuration}
               onChange={e =>
-                this.setState({ animationDuration: Math.max(+e.target.value, 0)})
+                this.setState({
+                  animationDuration: Math.max(+e.target.value, 0),
+                })
               }
             />
           </div>
@@ -90,9 +92,7 @@ class App extends React.Component<{}, State> {
               id="infinityId"
               type="checkbox"
               checked={this.state.infinity}
-              onChange={e =>
-                this.setState({ infinity: !!e.target.checked })
-              }
+              onChange={e => this.setState({ infinity: !!e.target.checked })}
             />
           </div>
         </div>
