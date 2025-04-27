@@ -27,8 +27,13 @@ const Carousel: React.FC<Props> = ({
   const canHandleNext = position !== maxPosition;
 
   const handlePrev = () => {
-    if (canHandlePrev) {
-      setPosition(prevPosition => Math.max(prevPosition - step, 0));
+    if (canHandlePrev || infinity) {
+      setPosition(prevPosition => {
+        if(prevPosition === 0){
+          return imagesLength -1;
+        }
+        return Math.max(prevPosition - step, 0);
+      });
     }
   };
 
@@ -64,7 +69,7 @@ const Carousel: React.FC<Props> = ({
           type="button"
           className={classNames({
             Carousel__button: true,
-            'Carousel__button--disabled': !canHandlePrev,
+            'Carousel__button--disabled': !canHandlePrev && infinity == false,
           })}
           onClick={handlePrev}
         >
